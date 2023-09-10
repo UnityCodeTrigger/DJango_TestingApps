@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Website</title>
+    <!--CSS-->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+  </head>
+
+  <body>
+    <header>
+      <h1>Weather request</h1>
+      <p>In this website you can check the weather around the world!</p>
+    </header>
+
+    <main>
+      <div id="FlexCentered">
+        <form class="Card" method="POST">
+          {% csrf_token %}
+            <h3>Enter a city </h3>
+            {{form.name}}
+            <input type="submit" value="Search">
+        </form>
+      </div>
+    
+      <div id="FlexCentered" style="  flex-wrap: wrap;">
+
+        {%for city in weatherData%}
+
+        <div class="Card">
+            <div class="CardContent">
+              <div style="display: flex;">
+                <img src="https://openweathermap.org/img/wn/{{city.Icon}}.png" alt="">
+                
+                <div>
+                  <h3 id="CityName">{{city.CityName}}</h3>
+                  <div style="text-align: left; padding-left: 25px;">
+                    <p id="Description">{{city.Desc}}</p>
+                    <p id="Temperature">{{city.Temp}}º C</p>
+                    <p id="Humidity">{{city.Hum}}%</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        {% endfor %}
+
+      </div>
+
+    </main>
+  </body>
+
+</html>

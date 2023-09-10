@@ -1,0 +1,73 @@
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    background-color:aliceblue;
+    margin: 0;
+    padding: 0;
+
+    text-align: center;
+}
+
+header{
+    background-color:cadetblue;
+    color: white;
+
+    width: 100%;
+    height: 100px;
+
+    display: block;
+
+    padding-top: 25px;
+}
+
+p{margin: 8px;}
+
+h1{
+    padding: 0;
+    margin: 0;
+}
+
+.Card{
+    background-color: white;
+    box-shadow: 0 0 25px cadetblue;
+    border-radius: 25px;
+
+    width: 25%;
+    height: 150px;
+
+    margin: 25px;
+}
+
+.Card h3{
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+.CardContent{
+    padding-right: 25px;
+    padding-left: 25px;
+    
+    align-items: center;
+    align-content: center;
+    align-self: center;
+
+    margin: 0 auto;
+}
+
+.CardContent img{
+    width: 75px;
+    height: 75px;
+    margin: 25px;
+}
+
+.CardContent h3{
+    margin: 8px;
+    padding-top: 8px;
+}
+
+#FlexCentered{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
