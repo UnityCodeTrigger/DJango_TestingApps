@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Django - Calculator App</title>
+    <!--CSS-->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+  </head>
+
+  <body>
+    <header>
+        <h1>Calculator app</h1>
+    </header>
+
+    <main>
+      <!--Accion es la funcion submitquerry en el script views de la aplicacion-->
+      <!--El metodo es de tipo GET porque unicamente queremos recivir datos hacia el servidor,
+          de lo contrario se usaria POST para modificar datos en el servidor-->
+        <form action="{% url 'submitquery' %}" method="GET">
+
+          <!--Crea un token (SIEMPRE HIJO DEL FORM) para validar el form-->
+          {% csrf_token %}
+          <p>A: </p>
+          <input type="number" name="queryA"> <!--El identificador del valor del input es el NAME="" -->
+          <p>B: </p>
+          <input type="number" name="queryB">
+          <p>Result: </p>
+
+          <!--Recoje el dato "operation" dentro del JSON del context enviado desde el backend-->
+          <h3>{{ operation }}</h3>
+          <input type="submit">
+        </form>
+        
+    </main>
+  </body>
+
+</html>

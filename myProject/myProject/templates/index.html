@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Django - Index</title>
+    <!--CSS-->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+  </head>
+
+  <body>
+    <header>
+        <h1>Welcome to my Testing web</h1>
+    </header>
+
+    <main>
+
+      <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+        <div class="Card">
+          <a href="/calculator">CALCULATOR APP</a>
+        </div>
+
+        <div class="Card">
+          <a href="/weather">WEATHER APP</a>
+        </div>
+      </div>
+
+    </main>
+  </body>
+
+</html>
